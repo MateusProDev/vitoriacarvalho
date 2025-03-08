@@ -31,7 +31,7 @@
   .lojinha-title {
     font-size: 26px;
     font-weight: bold;
-    color: #FFFFFF; /* Branco para contraste */
+    color: #424242; /* Branco para contraste */
     text-transform: uppercase;
     font-family: "Arial", sans-serif;
     flex: 1;
@@ -50,7 +50,7 @@
     }
   
     .lojinha-title {
-      font-size: 22px;
+      font-size: 18px;
     }
   }
   
@@ -65,7 +65,8 @@
     }
   
     .lojinha-title {
-      font-size: 20px;
+      font-size: 15px;
+      margin-right: 40px;
     }
   }
   
