@@ -1,0 +1,249 @@
+/* Estilos existentes para o EditBanner */
+.edit-banner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.edit-banner h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Container da imagem */
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Exibe a imagem do banner no topo */
+.banner-preview {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-banner form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-banner form input,
+.edit-banner form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.edit-banner form button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-banner form button:disabled {
+  background-color: #d6d6d6;
+  cursor: not-allowed;
+}
+
+.edit-banner form button:hover {
+  background-color: #0056b3;
+}
+
+/* Novos estilos para o fundo escuro */
+.banner-preview-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+/* Imagem de fundo do banner */
+.banner-bg-preview {
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: brightness(0.5);
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Sobreposição escura para maior contraste */
+.banner-bg-preview::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+/* Ajustes para o nome do arquivo selecionado */
+.file-input-label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsividade para EditBanner */
+@media (max-width: 768px) {
+  .edit-banner {
+    padding: 15px;
+  }
+
+  .banner-preview,
+  .banner-bg-preview {
+    max-width: 100%;
+  }
+
+  .edit-banner form input,
+  .edit-banner form textarea {
+    max-width: 100%;
+  }
+
+  .edit-banner form button {
+    width: 100%;
+  }
+}
+
+/* Estilos para o AdminLogin - Adicionados com alta especificidade */
+.admin-login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f4f4f4;
+}
+
+.admin-login-panel {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.admin-login-panel h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.admin-login-panel .admin-login-form {
+  display: flex !important; /* Sobrescreve o display: block do agente de usuário */
+  flex-direction: column !important;
+  align-items: center !important;
+  margin-top: 0 !important; /* Remove margem indesejada do agente de usuário */
+}
+
+.admin-login-panel .admin-login-form input {
+  width: 100%;
+  max-width: 350px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif; /* Garante compatibilidade com uma das folhas */
+}
+
+.admin-login-panel .admin-login-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.admin-login-panel .admin-login-form button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.admin-login-panel .admin-login-form button:hover {
+  background-color: #0056b3;
+}
+
+.admin-login-panel .admin-login-error {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  padding: 5px;
+  background-color: #f8d7da;
+  border-radius: 4px;
+}
+
+/* Responsividade para AdminLogin */
+@media (max-width: 768px) {
+  .admin-login-panel {
+    padding: 15px;
+    margin: 30px auto;
+  }
+
+  .admin-login-panel .admin-login-form input {
+    max-width: 100%;
+  }
+
+  .admin-login-panel .admin-login-form button {
+    width: 100%;
+  }
+
+  .admin-login-panel h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-login-panel {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .admin-login-panel .admin-login-form input,
+  .admin-login-panel .admin-login-form button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .admin-login-panel h2 {
+    font-size: 1.25rem;
+  }
+
+  .admin-login-panel .admin-login-error {
+    font-size: 0.8rem;
+  }
+}
