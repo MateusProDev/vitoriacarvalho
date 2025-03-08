@@ -68,9 +68,6 @@ form {
   align-items: center;
 }
 
-form input[type="file"] {
-  display: none;
-}
 
 .upload-label {
   background-color: #007bff;
