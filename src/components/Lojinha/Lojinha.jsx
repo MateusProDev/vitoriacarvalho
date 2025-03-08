@@ -276,9 +276,9 @@ const Lojinha = () => {
                   <button className="btnCar whatsapp-btn" onClick={handleFinalizePurchaseWhatsApp}>
                     Finalizar via WhatsApp
                   </button>
-                  <Link to="/checkout" className="btnCar mercadopago-btn">
+                  {/* <Link to="/checkout" className="btnCar mercadopago-btn">
                     Finalizar Online
-                  </Link>
+                  </Link> */}
                 </div>
               )}
             </div>
