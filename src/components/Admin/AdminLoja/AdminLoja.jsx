@@ -26,9 +26,9 @@ const AdminLoja = () => {
     navigate("/admin/view-users");
   };
 
-  const goToEditMercadoPagoKey = () => {
-    navigate("/admin/edit-mercadopago-key");
-  };
+  // const goToEditMercadoPagoKey = () => {
+  //   navigate("/admin/edit-mercadopago-key");
+  // };
 
   const goToHome = () => {
     navigate("/lojinha");
@@ -53,7 +53,7 @@ const AdminLoja = () => {
         <button onClick={goToEditProdutos}>Editar Produtos</button>
         <button onClick={goToEditWhatsApp}>Editar Número do WhatsApp</button>
         <button onClick={goToViewUsers}>Ver Usuários Cadastrados</button>
-        <button onClick={goToEditMercadoPagoKey}>Editar Chave Mercado Pago</button>
+        {/* <button onClick={goToEditMercadoPagoKey}>Editar Chave Mercado Pago</button> */}
         <button onClick={goToHome}>Voltar para a Home</button>
       </div>
 
