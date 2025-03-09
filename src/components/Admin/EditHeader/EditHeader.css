@@ -1,5 +1,5 @@
-/* EditHeader - Estilo Geral */
-.edit-header {
+/* AdminEditHeader - Estilo Geral */
+.admin-edit-header {
   max-width: 500px;
   margin: 0 auto;
   padding: 25px;
@@ -9,11 +9,11 @@
   transition: all 0.3s ease-in-out;
 }
 
-.edit-header:hover {
+.admin-edit-header:hover {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
-.edit-header h2 {
+.admin-edit-header h2 {
   font-size: 2rem;
   font-weight: bold;
   color: #222;
@@ -24,7 +24,7 @@
 }
 
 /* Mensagens de erro e sucesso */
-.error, .success {
+.admin-error, .admin-success {
   font-size: 1rem;
   text-align: center;
   margin-bottom: 15px;
@@ -32,20 +32,20 @@
   border-radius: 8px;
 }
 
-.error {
+.admin-error {
   color: #ff4d4d;
   background-color: #ffe5e5;
   border: 1px solid #ff4d4d;
 }
 
-.success {
+.admin-success {
   color: #4caf50;
   background-color: #e8f5e9;
   border: 1px solid #4caf50;
 }
 
 /* Estilizando a pré-visualização da logo */
-.logo-preview {
+.admin-logo-preview {
   display: block;
   margin: 20px auto;
   width: 180px;
@@ -57,106 +57,19 @@
   transition: transform 0.3s ease;
 }
 
-.logo-preview:hover {
+.admin-logo-preview:hover {
   transform: scale(1.05);
 }
 
-/* Formulário */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.upload-label {
-  background-color: #007bff;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
-
-.upload-label:hover {
-  background-color: #0056b3;
-}
-
-/* Botões */
-form button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 15px;
-}
-
-form button:disabled {
-  background-color: #d6d6d6;
-  cursor: not-allowed;
-}
-
-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Caixa de informações */
-.info-converter {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 0.92rem;
-  color: #555;
-}
-
-.info-converter a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.info-converter a:hover {
-  text-decoration: underline;
-}
-
-/* Responsividade para telas menores */
+/* Responsividade */
 @media (max-width: 768px) {
-  .edit-header {
-    padding: 20px;
-  }
-
-  .edit-header h2 {
+  .admin-edit-header h2 {
     font-size: 1.8rem;
-  }
-
-  .logo-preview {
-    max-width: 180px;
-  }
-
-  .upload-label {
-    width: 100%;
-    text-align: center;
-  }
-
-  form button {
-    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .edit-header h2 {
+  .admin-edit-header h2 {
     font-size: 1.6rem;
-  }
-
-  .info-converter {
-    font-size: 0.9rem;
   }
 }

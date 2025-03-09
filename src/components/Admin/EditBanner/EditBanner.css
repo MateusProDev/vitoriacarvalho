@@ -1,4 +1,4 @@
-/* EditBanner.css */
+/* Estilos para o EditBanner */
 .edit-banner-panel {
   max-width: 600px;
   margin: 20px auto;
@@ -6,40 +6,39 @@
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
 .edit-banner-panel h2 {
   font-size: 2rem;
   font-weight: bold;
   color: #222;
-  text-align: center;
   margin-bottom: 20px;
 }
 
-.error {
+.edit-banner-error {
   color: #ff4d4d;
   background-color: #ffe5e5;
   padding: 10px;
   border-radius: 8px;
-  text-align: center;
   margin-bottom: 15px;
 }
 
-.success {
+.edit-banner-success {
   color: #4caf50;
   background-color: #e8f5e9;
   padding: 10px;
   border-radius: 8px;
-  text-align: center;
   margin-bottom: 15px;
 }
 
-form {
+.edit-banner-form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-form label {
+.edit-banner-form label {
   font-size: 1.1rem;
   font-weight: bold;
   color: #333;
@@ -47,17 +46,18 @@ form label {
   margin-bottom: 5px;
 }
 
-form input[type="text"],
-form textarea {
-  padding: 10px;
+.edit-banner-form input[type="text"],
+.edit-banner-form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
   font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   margin-bottom: 10px;
 }
 
-/* Tornando o input de arquivo visível */
-form input[type="file"] {
+.edit-banner-form input[type="file"] {
   display: block;
   margin-bottom: 15px;
   padding: 8px;
@@ -65,7 +65,7 @@ form input[type="file"] {
   border-radius: 4px;
 }
 
-.banner-preview {
+.edit-banner-preview {
   max-width: 200px;
   height: auto;
   margin: 10px 0;
@@ -73,7 +73,7 @@ form input[type="file"] {
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
 }
 
-form button {
+.edit-banner-form button {
   padding: 12px 24px;
   font-size: 1rem;
   font-weight: bold;
@@ -85,11 +85,27 @@ form button {
   margin-top: 20px;
 }
 
-form button:disabled {
+.edit-banner-form button:disabled {
   background-color: #d6d6d6;
   cursor: not-allowed;
 }
 
-form button:hover:not(:disabled) {
+.edit-banner-form button:hover:not(:disabled) {
   background-color: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .edit-banner-panel {
+    padding: 15px;
+  }
+
+  .edit-banner-form input,
+  .edit-banner-form textarea {
+    max-width: 100%;
+  }
+
+  .edit-banner-form button {
+    width: 100%;
+  }
 }

@@ -4,9 +4,9 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import './EditHeader.css';
+import "./EditHeader.css";
 
-const EditHeader = () => {
+const AdminEditHeader = () => {
   const navigate = useNavigate();
   const [logoUrl, setLogoUrl] = useState("");
   const [newLogoUrl, setNewLogoUrl] = useState(""); // URL da imagem
@@ -97,17 +97,17 @@ const EditHeader = () => {
   };
 
   return (
-    <div className="edit-header">
+    <div className="admin-edit-header">
       <h2>Editar Logo</h2>
 
       {/* Exibe a mensagem de erro, se houver */}
-      {error && <p className="error">{error}</p>}
+      {error && <p className="admin-error">{error}</p>}
 
       {/* Exibe a imagem atual da logo */}
-      {logoUrl && <img src={logoUrl} alt="Logo Atual" className="logo-preview" />}
+      {logoUrl && <img src={logoUrl} alt="Logo Atual" className="admin-logo-preview" />}
 
       {/* Exibe a mensagem de sucesso, se houver */}
-      {success && <p className="success">{success}</p>}
+      {success && <p className="admin-success">{success}</p>}
 
       {/* Upload da nova logo */}
       <div>
@@ -121,7 +121,7 @@ const EditHeader = () => {
       {newLogoUrl && (
         <div>
           <h4>Pré-visualização:</h4>
-          <img src={newLogoUrl} alt="Pré-visualização" className="logo-preview" />
+          <img src={newLogoUrl} alt="Pré-visualização" className="admin-logo-preview" />
         </div>
       )}
 
@@ -135,4 +135,4 @@ const EditHeader = () => {
   );
 };
 
-export default EditHeader;
+export default AdminEditHeader;
