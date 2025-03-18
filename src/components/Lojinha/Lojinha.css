@@ -582,59 +582,47 @@
 
 /* Telas Pequenas (Até 767px) */
 @media (max-width: 767px) {
-  .price-container {
-    gap: 10px;
-  }
-  .original-price {
-    font-size: 14px;
-  }
-  .current-price {
-    font-size: 16px;
-  }
-  .productDescription {
-    font-size: 12px;
-  }
-  .view-product-btn {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-  .cartLoginAdmin {
-    position: absolute;
-    bottom: 120px;
-    right: 90px !important;
-  }
-  .carinho_compras {
-    top: 20px;
-    right: -750px;
-    height: 100vh;
-    width: 60%;
-    padding: 15px;
-  }
   .productList {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Tamanho fixo para os produtos */
     gap: 15px;
   }
 
   .productItem {
+    max-width: 140px; /* Define um tamanho máximo para os produtos */
+    margin: 0; /* Centraliza os produtos */
     padding: 10px;
+    box-sizing: border-box;
   }
 
   .productImage {
-    height: 150px;
+    height: 120px; /* Altura fixa para as imagens */
+    width: 100%; /* Largura total do contêiner */
+    object-fit: cover; /* Garante que a imagem cubra o espaço */
   }
 
-  .productItemDestaque {
-    width: 200px; /* Reduzido para caber melhor */
-    padding: 10px;
+  .productName {
+    font-size: 14px;
+    margin: 5px 0;
   }
 
-  .productImageDestaque {
-    height: 150px;
+  .price-container {
+    gap: 8px;
   }
 
-  .categoryList a {
+  .original-price {
+    font-size: 12px;
+  text-decoration: line-through;
+  }
+
+  .current-price {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .view-product-btn {
     padding: 6px 12px;
     font-size: 12px;
+    margin-top: 10px;
   }
 }
 
