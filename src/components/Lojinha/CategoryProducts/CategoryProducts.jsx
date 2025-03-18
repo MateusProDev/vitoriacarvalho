@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { db } from "../../../firebase/firebaseConfig";
 import { doc, onSnapshot } from "firebase/firestore";
+import { FiShare2 } from "react-icons/fi"; // Ícone de compartilhamento
 import "./CategoryProducts.css";
 
 const CategoryProducts = () => {
@@ -10,6 +11,7 @@ const CategoryProducts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [expanded, setExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [copySuccess, setCopySuccess] = useState(""); // Estado para feedback de cópia
 
   useEffect(() => {
     const productsRef = doc(db, "lojinha", "produtos");
@@ -61,12 +63,38 @@ const CategoryProducts = () => {
     setExpanded((prev) => !prev);
   };
 
+  // Função para calcular o preço original com base no desconto
+  const calculateOriginalPrice = (price, discountPercentage) => {
+    if (discountPercentage > 0) {
+      return (price / (1 - discountPercentage / 100)).toFixed(2);
+    }
+    return price.toFixed(2);
+  };
+
+  // Função para copiar o link da categoria
+  const shareCategoryLink = () => {
+    const categoryUrl = `${window.location.origin}/lojinha/produtos/${categoryKey}`;
+    navigator.clipboard.writeText(categoryUrl).then(() => {
+      setCopySuccess("Link copiado para a área de transferência!");
+      setTimeout(() => setCopySuccess(""), 2000); // Remove mensagem após 2 segundos
+    }).catch((err) => {
+      console.error("Erro ao copiar o link:", err);
+      setCopySuccess("Erro ao copiar o link.");
+    });
+  };
+
   if (loading) return <div>Carregando produtos...</div>;
   if (!category) return <div>Categoria '{categoryKey.replace(/-/g, " ")}' não encontrada.</div>;
 
   return (
     <div className="category-products-container">
-      <h1>{category.title}</h1>
+      <div className="category-header">
+        <h1>{category.title}</h1>
+        <button className="share-btn" onClick={shareCategoryLink} title="Compartilhar categoria">
+          <FiShare2 />
+        </button>
+      </div>
+      {copySuccess && <span className="copy-feedback">{copySuccess}</span>}
       <section className="search-bar">
         <input
           type="text"
@@ -84,13 +112,27 @@ const CategoryProducts = () => {
             {visibleProducts.map((product) => (
               <Link
                 key={product.name}
-                to={`/produto/${category.title.replace(/\s+/g, "-")}/${product.name.replace(/\s+/g, "-")}`} // Mantém hífens na URL
+                to={`/produto/${category.title.replace(/\s+/g, "-")}/${product.name.replace(/\s+/g, "-")}`}
                 className="product-item-link"
               >
                 <div className="product-item">
                   <img src={product.imageUrl} alt={product.name} className="product-image" />
-                  <p>{product.name} - R${product.price.toFixed(2)}</p>
-                  {product.description && <p>{product.description}</p>}
+                  {product.discountPercentage > 0 && (
+                    <span className="discount-tag">{product.discountPercentage}% OFF</span>
+                  )}
+                  <p>{product.name}</p>
+                  <div className="price-container">
+                    {product.discountPercentage > 0 && (
+                      <span className="original-price">
+                        R${calculateOriginalPrice(product.price || 0, product.discountPercentage)}
+                      </span>
+                    )}
+                    <span className="current-price">R${(product.price || 0).toFixed(2)}</span>
+                  </div>
+                  {product.description && (
+                    <p className="product-description-preview">{product.description}</p>
+                  )}
+                  <button className="view-product-btn">Mais Detalhes</button>
                 </div>
               </Link>
             ))}
